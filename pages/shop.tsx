@@ -1,17 +1,16 @@
 import type { NextPage } from 'next'
-import React, { useState } from 'react';
-import { Nav, Icons, Header, Grommet, Box, Button, Grid, Text, Footer, Anchor } from 'grommet';
-import HeaderUnit from '../components/HeaderUnit.tsx'
+import React, { useState, useContext, useEffect} from 'react';
+import { Paragraph, Main, Nav, Icons, Header, Grommet, Box, Button, Grid, Text, Footer, Anchor } from 'grommet';
+import ContactHeaderUnit from '../components/ContactHeaderUnit.tsx'
 import FooterUnit from '../components/FooterUnit.tsx'
-import OriginUnit from '../components/OriginUnit.tsx'
-import ShopUnit from '../components/ShopUnit.tsx'
+import ProductsList from '../components/ProductsList.tsx'
 
-const Home: NextPage = () => {
-    const [sidebar, setSidebar] = useState(true);
-
+const Shop: NextPage = () => {
+    
       return (
           <Grommet
               full={true}
+              background="#fffced"
               theme={{
                   global: { font: {
                               family: "Alice"
@@ -28,12 +27,11 @@ const Home: NextPage = () => {
                   },
               }}
           >
-            <HeaderUnit/>
-            <OriginUnit/>
-            <ShopUnit/>
+            <ContactHeaderUnit/>
+            <ProductsList/>
             <FooterUnit/>
           </Grommet>
       )
 }
 
-export default Home;
+export default Shop;
