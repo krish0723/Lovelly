@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import React, { useState } from 'react';
 import styles from '../styles/Home.module.css'
 import DepopIcon from './icons/depop.svg'
-import { Paragraph, Nav, Icons, Header, Grommet, Box, Button, Grid, Text, Footer, Anchor } from 'grommet';
+import { Paragraph, Nav, Header, Grommet, Box, Button, Grid, Text, Footer, Anchor } from 'grommet';
 import {
   Instagram,
   Shop,
@@ -11,13 +11,15 @@ import {
 import Link from 'next/link'
 
 export default function ContactHeaderUnit() {
+    const instagram = <Instagram color="#000"/>
+    const shop = <Shop color="#000"/>
 
     return (
         <Header background="#fffced" pad="small" gap="xxsmall">
             <Nav direction="row" pad="xxsmall">
               <Box direction="row" width="xxsmall"/>
-              <Anchor icon={<Instagram color="#000"/>} hoverIndicator href="https://www.instagram.com/lovelly.jv/" />
-              <Anchor icon={<Shop color="#000"/>} hoverIndicator />
+              <Anchor icon={instagram} hoverIndicator href="https://www.instagram.com/lovelly.jv/" />
+              <Anchor icon={shop} hoverIndicator />
             </Nav>
             <Box direction="row" width="xxsmall"/>
             <Box
