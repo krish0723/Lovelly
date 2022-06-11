@@ -11,15 +11,13 @@ import {
 import Link from 'next/link'
 
 export default function ContactHeaderUnit() {
-    const instagram = <Instagram color="#000"/>
-    const shop = <Shop color="#000"/>
-
+    
     return (
         <Header background="#fffced" pad="small" gap="xxsmall">
             <Nav direction="row" pad="xxsmall">
               <Box direction="row" width="xxsmall"/>
-              <Anchor icon={instagram} hoverIndicator href="https://www.instagram.com/lovelly.jv/" />
-              <Anchor icon={shop} hoverIndicator />
+              <Anchor icon={<Instagram color="#000"/>} hoverIndicator href="https://www.instagram.com/lovelly.jv/" />
+              <Anchor icon={<Shop color="#000"/>} hoverIndicator />
             </Nav>
             <Box direction="row" width="xxsmall"/>
             <Box

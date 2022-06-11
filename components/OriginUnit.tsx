@@ -14,7 +14,7 @@ import {
 export default function OriginUnit() {
 
     return (
-        <Main pad="medium" direction="row" background="#b4a445" overflow="visible" justify="between" overflow="hidden">
+        <Main pad="medium" direction="row" background="#b4a445" justify="between" overflow="hidden">
             <Box
                 direction="column"
                 pad="xlarge"

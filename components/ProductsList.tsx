@@ -53,6 +53,7 @@ export default function ProductsList() {
     let productObjs = products.map((product, index) => {
         return(
         <Box
+          key={product._id}
           gridArea= {areas[index].name}
           background="#003311"
           direction="column"
