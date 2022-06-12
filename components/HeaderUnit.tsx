@@ -16,8 +16,8 @@ export default function HeaderUnit() {
         <Header background="#b4a445" pad="small" gap="xxsmall" >
             <Nav direction="row" pad="xxsmall">
               <Box direction="row" width="xxsmall"/>
-              <Anchor icon={<Instagram color="#fff"/>} hoverIndicator href="https://www.instagram.com/lovelly.jv/"/>
-              <Anchor icon={<Shop color="#fff"/>} hoverIndicator />
+              <Anchor icon={<Instagram width="0" color="#fff"/>} hoverIndicator href="https://www.instagram.com/lovelly.jv/"/>
+              <Anchor icon={<Shop width="0" color="#fff"/>} hoverIndicator />
             </Nav>
             <Box direction="row" width="xxsmall"/>
             <Box
@@ -42,7 +42,7 @@ export default function HeaderUnit() {
             </Box>
             <Box direction="row" width="xsmall"/>
             <Nav direction="row" pad="xxsmall">
-                <Anchor icon={<Cart color="#fff"/>} hoverIndicator />
+                <Anchor icon={<Cart width="0" color="#fff"/>} hoverIndicator />
                 <Box direction="row" width="xxsmall"/>
             </Nav>
         </Header>

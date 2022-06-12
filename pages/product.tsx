@@ -120,8 +120,8 @@ const Product: NextPage = ({id}) => {
                      <Text size="medium" weight="bold" color="#000">Color</Text>
                      <Text size="medium" weight="bold" color="#000">Size</Text>
                      <Box pad="small"/>
-                     <Anchor size="medium" weight="bold" onClick={() => {setDescFit(true)}} color="#000">{descFit == true ? <CaretRightFill size="small"/> : ""} Description</Anchor>
-                     <Anchor size="medium" weight="bold" onClick={() => {setDescFit(false)}} color="#000">{descFit == true ? "" : <CaretRightFill size="small"/>} How it Fits</Anchor>
+                     <Anchor size="medium" weight="bold" onClick={() => {setDescFit(true)}} color="#000">{descFit == true ? <CaretRightFill width="0" size="small"/> : ""} Description</Anchor>
+                     <Anchor size="medium" weight="bold" onClick={() => {setDescFit(false)}} color="#000">{descFit == true ? "" : <CaretRightFill width="0" size="small"/>} How it Fits</Anchor>
                      <Box pad="small"/>
                      <Button secondary color="#000" label="CUSTOM"/>
                      <Button primary color="#000" label="ADD TO BAG"/>

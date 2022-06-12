@@ -11,13 +11,13 @@ import {
 import Link from 'next/link'
 
 export default function ContactHeaderUnit() {
-    
+
     return (
         <Header background="#fffced" pad="small" gap="xxsmall">
             <Nav direction="row" pad="xxsmall">
               <Box direction="row" width="xxsmall"/>
-              <Anchor icon={<Instagram color="#000"/>} hoverIndicator href="https://www.instagram.com/lovelly.jv/" />
-              <Anchor icon={<Shop color="#000"/>} hoverIndicator />
+              <Anchor icon={<Instagram width="0" color="#000"/>} hoverIndicator href="https://www.instagram.com/lovelly.jv/" />
+              <Anchor icon={<Shop width="0" color="#000"/>} hoverIndicator />
             </Nav>
             <Box direction="row" width="xxsmall"/>
             <Box
@@ -42,7 +42,7 @@ export default function ContactHeaderUnit() {
             </Box>
             <Box direction="row" width="xsmall"/>
             <Nav direction="row" pad="xxsmall">
-                <Anchor icon={<Cart color="#000"/>} hoverIndicator />
+                <Anchor icon={<Cart width="0" color="#000"/>} hoverIndicator />
                 <Box direction="row" width="xxsmall"/>
             </Nav>
         </Header>

@@ -49,39 +49,44 @@ export default function ProductsList() {
     //
 
     console.log(areas);
+
     // create our product objects for our grid
-    let productObjs = products.map((product, index) => {
-        return(
-        <Box
-          key={product._id}
-          gridArea= {areas[index].name}
-          background="#003311"
-          direction="column"
-          pad="none"
-          align="center"
-          onClick={() => {handleProdClick(product._id)}}
-        >
-            <Image
-              src={product.frontImage} fill="true" fit="cover"
-              onMouseOver={e => (e.currentTarget.src = product.backImage)}
-              onMouseOut={e => (e.currentTarget.src = product.frontImage)}
-            />
+    var productObjs = [];
+    if (products){
+        productObjs = products.map((product, index) => {
+            return(
             <Box
-              direction="row"
-              pad="xsmall"
+              key={product._id}
+              gridArea= {areas[index].name}
+              background="#003311"
+              direction="column"
+              pad="none"
               align="center"
-              gap="large"
-              justify="between"
-              animation="fadeIn"
+              onClick={() => {handleProdClick(product._id)}}
             >
-              <Text color="#fff" size="medium">{product.name}</Text>
-              <Text color="#fff" size="medium">{product.color}</Text>
-              <Text color="#fff" size="medium">{product.price} USD</Text>
-              <Text color="#fff" size="medium">{product.size}</Text>
-            </Box>
-       </Box>
-        );
-    });
+                <Image
+                  src={product.frontImage} fill={true} fit="cover"
+                  onMouseOver={e => (e.currentTarget.src = product.backImage)}
+                  onMouseOut={e => (e.currentTarget.src = product.frontImage)}
+                />
+                <Box
+                  direction="row"
+                  pad="xsmall"
+                  align="center"
+                  gap="large"
+                  justify="between"
+                  animation="fadeIn"
+                >
+                  <Text color="#fff" size="medium">{product.name}</Text>
+                  <Text color="#fff" size="medium">{product.color}</Text>
+                  <Text color="#fff" size="medium">{product.price} USD</Text>
+                  <Text color="#fff" size="medium">{product.size}</Text>
+                </Box>
+           </Box>
+            );
+        });
+    }
+
     //
     const rows = []
     for (let i = 0; i < r; i++){
