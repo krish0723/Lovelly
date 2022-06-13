@@ -25,6 +25,7 @@ export default function ProductsList() {
          const response = await fetch("/api/getproducts");
          const data = await response.json();
          setProducts(JSON.parse(data));
+         console.log(products);
     }
     useEffect(() => {
             getProducts();
@@ -52,7 +53,7 @@ export default function ProductsList() {
 
     // create our product objects for our grid
     var productObjs = [];
-    if (products){
+    if (typeof products != "undefined" && products != null){
         productObjs = products.map((product, index) => {
             return(
             <Box
