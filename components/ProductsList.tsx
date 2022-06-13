@@ -23,10 +23,11 @@ export default function ProductsList() {
 
     const getProducts = async () => {
          const response = await fetch("/api/getproducts");
-         const data = await response.json();
-         setProducts(JSON.parse(data));
-         console.log(products);
+         var data = await response.json();
+         data = JSON.parse(data);
+         await setProducts(data);
     }
+
     useEffect(() => {
             getProducts();
         }, [])
@@ -49,7 +50,7 @@ export default function ProductsList() {
     }
     //
 
-    console.log(areas);
+    console.log(products);
 
     // create our product objects for our grid
     var productObjs = [];

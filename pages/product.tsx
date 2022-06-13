@@ -91,11 +91,11 @@ const Product: NextPage = ({id}) => {
               >
               <Image
                 src={product.frontImage}
-                fill="true" fit="cover"
+                fill={true} fit="cover"
               />
               <Image
                 src={product.backImage}
-                fill="true" fit="cover"
+                fill={true} fit="cover"
               />
 
              </Box>

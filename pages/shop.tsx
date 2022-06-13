@@ -6,7 +6,7 @@ import FooterUnit from '../components/FooterUnit.tsx'
 import ProductsList from '../components/ProductsList.tsx'
 
 const Shop: NextPage = () => {
-    
+
       return (
           <Grommet
               full={true}
