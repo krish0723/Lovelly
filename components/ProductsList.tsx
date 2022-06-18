@@ -54,7 +54,7 @@ export default function ProductsList() {
 
     // create our product objects for our grid
     var productObjs = [];
-    if (typeof products != "undefined" && products != null){
+    if (products != undefined && products != null){
         productObjs = products.map((product, index) => {
             return(
             <Box
