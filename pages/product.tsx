@@ -1,10 +1,10 @@
 import type { NextPage } from 'next'
 import React, { useState, useEffect } from 'react';
-import { Image, FormField, TextInput, RadioButtonGroup, Paragraph, Form,  Nav, Icons, Header, Grommet, Box, Button, Grid, Text, Footer, Anchor } from 'grommet';
-import ContactHeaderUnit from '../components/ContactHeaderUnit.tsx'
-import FooterUnit from '../components/FooterUnit.tsx'
-import OriginUnit from '../components/OriginUnit.tsx'
-import ShopUnit from '../components/ShopUnit.tsx'
+import { Image, FormField, TextInput, RadioButtonGroup, Paragraph, Form,  Nav, Header, Grommet, Box, Button, Grid, Text, Footer, Anchor } from 'grommet';
+import ContactHeaderUnit from '../components/ContactHeaderUnit'
+import FooterUnit from '../components/FooterUnit'
+import OriginUnit from '../components/OriginUnit'
+import ShopUnit from '../components/ShopUnit'
 import {
   CaretRightFill,
   Shop,

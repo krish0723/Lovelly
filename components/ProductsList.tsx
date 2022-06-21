@@ -1,8 +1,8 @@
 import type { NextPage } from 'next'
-import React, { useState, useEffect, useContext} from 'react';
+import React, {useState, useEffect, useContext, ReactComponentElement} from 'react';
 import styles from '../styles/Home.module.css'
 import DepopIcon from './icons/depop.svg'
-import { Image, Main, Heading, Paragraph, Nav, Icons, Header, Grommet, Box, Button, Grid, Text, Footer, Anchor } from 'grommet';
+import { Image, Main, Heading, Paragraph, Nav, Header, Grommet, Box, Button, Grid, Text, Footer, Anchor } from 'grommet';
 import {
   Instagram,
   Shop,
@@ -11,13 +11,29 @@ import {
 import { useRouter } from 'next/router';
 
 export default function ProductsList() {
+    interface Product {
+        _id: string;
+        name: string;
+        color: string;
+        price: number;
+        size: string;
+        frontImage: string;
+        backImage: string;
+        description: string;
+        fit: string;
+    }
+    interface Area {
+        name: string;
+        start: number[];
+        end: number[];
+    }
     const router = useRouter();
     // load our products state variable
     const [products, setProducts] = useState([]);
     const [prodImg, setProdImg] = useState([]);
 
 
-    function handleProdClick(id){
+    function handleProdClick(id:string){
         router.push({ pathname: "/product", query: { id: id } })
     }
 
@@ -25,7 +41,7 @@ export default function ProductsList() {
          const response = await fetch("/api/getproducts");
          var data = await response.json();
          data = JSON.parse(data);
-         await setProducts(data);
+         setProducts(data);
     }
 
     useEffect(() => {
@@ -38,7 +54,7 @@ export default function ProductsList() {
     const cols = 3;
     var r = 0;
     var c = 0;
-    var areas = []
+    var areas:Area[] = []
     for (let x = 1; x < products.length+1; x++){
         const name = areaVar+x.toString()
         areas.push({ name: name, start: [r,c], end: [r,c]  })
@@ -53,41 +69,40 @@ export default function ProductsList() {
     console.log(products);
 
     // create our product objects for our grid
-    var productObjs = [];
-    if (products != undefined && products != null){
-        productObjs = products.map((product, index) => {
-            return(
+    let productObjs = [];
+
+    productObjs = products.map((product:Product, index) => {
+        return(
+        <Box
+          key={product._id}
+          gridArea= {areas[index].name}
+          background="#003311"
+          direction="column"
+          pad="none"
+          align="center"
+          onClick={() => {handleProdClick(product._id)}}
+        >
+            <Image
+              src={product.frontImage} fill={true} fit="cover"
+              onMouseOver={e => (e.currentTarget.src = product.backImage)}
+              onMouseOut={e => (e.currentTarget.src = product.frontImage)}
+            />
             <Box
-              key={product._id}
-              gridArea= {areas[index].name}
-              background="#003311"
-              direction="column"
-              pad="none"
+              direction="row"
+              pad="xsmall"
               align="center"
-              onClick={() => {handleProdClick(product._id)}}
+              gap="large"
+              justify="between"
+              animation="fadeIn"
             >
-                <Image
-                  src={product.frontImage} fill={true} fit="cover"
-                  onMouseOver={e => (e.currentTarget.src = product.backImage)}
-                  onMouseOut={e => (e.currentTarget.src = product.frontImage)}
-                />
-                <Box
-                  direction="row"
-                  pad="xsmall"
-                  align="center"
-                  gap="large"
-                  justify="between"
-                  animation="fadeIn"
-                >
-                  <Text color="#fff" size="medium">{product.name}</Text>
-                  <Text color="#fff" size="medium">{product.color}</Text>
-                  <Text color="#fff" size="medium">{product.price} USD</Text>
-                  <Text color="#fff" size="medium">{product.size}</Text>
-                </Box>
-           </Box>
-            );
-        });
-    }
+              <Text color="#fff" size="medium">{product.name}</Text>
+              <Text color="#fff" size="medium">{product.color}</Text>
+              <Text color="#fff" size="medium">{product.price} USD</Text>
+              <Text color="#fff" size="medium">{product.size}</Text>
+            </Box>
+       </Box>
+        );
+    });
 
     //
     const rows = []
