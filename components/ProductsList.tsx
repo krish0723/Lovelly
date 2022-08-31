@@ -47,7 +47,6 @@ export default function ProductsList() {
     useEffect(() => {
             getProducts();
         }, [])
-    //
 
     // build areas list for our grid
     const areaVar = "area";
