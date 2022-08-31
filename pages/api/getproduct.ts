@@ -13,7 +13,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'api-key': process.env.DB_KEY
+          'api-key': "YHoJk7bkjaLXzYu6GaM2bv2DWNl4zuniGFTX926hZob3K9KsrojtaxKYrPyH7M1S"
         },
         body: JSON.stringify({id:id})
     }).then((res) => res.text());
